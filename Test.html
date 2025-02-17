@@ -202,27 +202,57 @@
             font-size: 40px;
             font-style: italic;
             color: seashell;
+            display: inline-block;
+            position: relative;
+            /* 부모 요소에 상대적 위치를 설정 */
 
         }
 
         .menuBox:hover {
             /* transform: scale(0.5); */
             transform: scaleX(1.2);
+            opacity: 1.8;
+            color: rgb(198, 18, 198);
+            text-shadow: 3px 1px 1px #ddbce9;
+            cursor: pointer;
         }
 
-        .cube {
-
-
-            animation-name: slider;
-            animation-duration: 5s;
-
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
+        .menuBox:hover .hidden {
+            display: block;
+            position: absolute;
+            left: -120px;
+            /* 왼쪽으로 메뉴 위치 */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .cube:hover {
-            transform: rotate(360deg);
+        .hidden {
+            display: none;
+            position: absolute;
+            /* 자식 요소를 절대 위치로 설정 */
+            left: -100px;
+            /* 원하는 왼쪽 위치 값으로 조정 */
+            top: 0;
+            /* 필요한 경우 top 위치를 조정 */
         }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        .hidden a {
+            display: block;
+            /* a 태그를 블록으로 만들어 세로로 나열 */
+            margin: 5px 0;
+            /* 항목 간의 간격을 조정 (필요한 경우) */
+        }
+
+        .hidden a:hover {
+            background-color: #cebdbd;
+        }
+
 
 
         @keyframes slider {
@@ -236,47 +266,43 @@
         }
 
         #prod-pic,
-		#desc {
-			float: left;
-		}
+        #desc {
+            float: left;
+        }
 
-		#prod-pic {
-			margin: 20px 20px auto 10px;
-			padding: 0;
-		}
+        #prod-pic {
+            margin: 20px 20px auto 10px;
+            padding: 0;
+        }
 
-		#java {
-			box-shadow: 1px 1px 2px #eee;
-			outline: 1px dashed #ccc;
-			outline-offset: -7px;
-		}
+        #java {
+            box-shadow: 1px 1px 2px #eee;
+            outline: 1px dashed #ccc;
+            outline-offset: -7px;
+        }
 
-		#small-pic {
-			margin-top: 20px;
-			list-style: none;
-			padding: 0;
-		}
+        #small-pic {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
 
-		#small-pic>li {
-			float: left;
-			margin-right: 10px;
-		}
+        #small-pic>li {
+            float: left;
+            margin-right: 10px;
+        }
 
-		.small {
-			width: 60px;
-			height: 60px;
-            
-		}
+        .small {
+            width: 60px;
+            height: 60px;
 
-
-		#small-pic img:hover {
-			cursor: pointer;
-            
-		}
+        }
 
 
+        #small-pic img:hover {
+            cursor: pointer;
 
-        
+        }
     </style>
 </head>
 
@@ -411,38 +437,66 @@
             <audio controls autoplay loop class="BGM">
                 <source src="IMGBGM/OldTales_FirstPage.mp3">
             </audio>
-            <span class="menuBox">
+            <div class="menuBox">
                 <span class="material-symbols-outlined">menu_book</span>
-                <span>menu1</span>
-            </span>
-            <span class="menuBox">
+                <span>menu 1</span>
+                <div class=hidden>
+                    <a>sel 1A</a>
+                    <hr>
+                    <a>sel 1B</a>
+                    <hr>
+                    <a>sel 1C</a>
+                </div>
+            </div>
+            <div class="menuBox">
                 <span class="material-symbols-outlined">menu_book</span>
-                <span>menu2</span>
-            </span>
-            <span class="menuBox">
+                <span>menu 2</span>
+                <div class=hidden>
+                    <a>sel 2A</a>
+                    <hr>
+                    <a>sel 2B</a>
+                    <hr>
+                    <a>sel 2C</a>
+                </div>
+            </div>
+            <div class="menuBox">
                 <span class="material-symbols-outlined">menu_book</span>
-                <span>menu3</span>
-            </span>
-            <span class="menuBox">
+                <span>menu 3</span>
+                <div class=hidden>
+                    <a>sel 3A</a>
+                    <hr>
+                    <a>sel 3B</a>
+                    <hr>
+                    <a>sel 3C</a>
+                </div>
+            </div>
+            <div class="menuBox">
                 <span class="material-symbols-outlined">menu_book</span>
-                <span>menu4</span>
-            </span>
+                <span>menu 4</span>
+                <div class=hidden>
+                    <a>sel 4A</a>
+                    <hr>
+                    <a>sel 4B</a>
+                    <hr>
+                    <a>sel 4C</a>
+                </div>
+            </div>
         </div>
 
 
-        <div style="padding-top: 8px; font-size: 40px;
-        font-style: italic;
+        <div style="padding-right: 90px; margin-top: 190px; font-size: 40px;
+        font-style: italic; text-align: center;
 color: seashell;">
             DISPLAY
         </div>
         <div id="prod-pic">
-			<img src="IMGBGM/subBG.jpg" alt="" id="java" width="200" height="200">
-			<div id="small-pic">
-				<img src="IMGBGM/profile2.jpg" class="small">
-				<img src="IMGBGM/profile3.jpg" class="small">
-				<img src="IMGBGM/subBG - 복사본.jpg" class="small">
-			</div>
-		</div>
+            <img src="IMGBGM/subBG.jpg" alt="" id="java" width="200" height="200">
+            <div id="small-pic">
+                <img src="IMGBGM/profile5.jpg" class="small">
+                <img src="IMGBGM/profile6.jpg" class="small">
+                <img src="IMGBGM/subBG - 복사본.jpg" class="small">
+            </div>
+        </div>
 
 
         <!-- <div class="cube2" style="float: left;">
@@ -495,17 +549,17 @@ color: seashell;">
 
 
     let java = document.querySelector("#java");
-	let smalljava = document.querySelectorAll(".small");
-	for(let i = 0; i<smalljava.length; i++){
-		smalljava[i].onclick = function(){
-			// e.target.src;
-			// this.src; 주체가 되는애
-			let temp = this.src;
-			this.src = java.src;
-			java.src = temp;
+    let smalljava = document.querySelectorAll(".small");
+    for (let i = 0; i < smalljava.length; i++) {
+        smalljava[i].onclick = function () {
+            // e.target.src;
+            // this.src; 주체가 되는애
+            let temp = this.src;
+            this.src = java.src;
+            java.src = temp;
 
-		}
-	}
+        }
+    }
 
 
 
